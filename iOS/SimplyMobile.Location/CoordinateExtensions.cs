@@ -2,15 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MonoTouch.CoreLocation;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using CoreLocation;
+using Foundation;
 
 namespace SimplyMobile.Location
 {
     public static class CoordinateExtensions
     {
-        public static Coordinates GetCoordinates(this CLLocation location)
+		public static Coordinates GetCoordinates(this CLLocation location)
         {
             return new Coordinates()
                 {
@@ -19,7 +18,7 @@ namespace SimplyMobile.Location
                     Speed = location.Speed,
                     Latitude = location.Coordinate.Latitude,
                 Longitude = location.Coordinate.Longitude,
-                TimeStamp = location.Timestamp
+				TimeStamp = (DateTime)location.Timestamp
                 };
         }
 
@@ -35,7 +34,7 @@ namespace SimplyMobile.Location
                 coordinates.Altitude.HasValue ? coordinates.Altitude.Value : 0, 
                 coordinates.Accuracy.HasValue ? coordinates.Accuracy.Value : 0, 
                 0, 
-                coordinates.TimeStamp);
+				(NSDate)coordinates.TimeStamp);
         }
     }
 }

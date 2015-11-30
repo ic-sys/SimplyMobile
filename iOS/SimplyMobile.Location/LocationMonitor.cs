@@ -2,10 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MonoTouch.CoreLocation;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
 using System.Threading.Tasks;
+using CoreLocation;
 
 namespace SimplyMobile.Location
 {
